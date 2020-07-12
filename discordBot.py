@@ -49,7 +49,7 @@ async def on_voice_state_update(member, before, after):
         else :
             msg += ' 加入了語音頻道'  + after.channel.name 
 
-    await lobbyChannel.send(userName + msg)
+    await lobbyChannel.send(str(userName) + msg)
 
 
 TOKEN = os.environ.get("DISCORD_BOT_SECRET")
