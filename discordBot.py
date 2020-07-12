@@ -21,4 +21,4 @@ async def announcement(ctx, *, args):
     embed.set_footer(text="By EchoNoahGaming")
     await ctx.send("@everyone", embed=embed)
 
-bot.run(str(os.environ.get('BOT_TOKEN')))
+bot.run(str(os.environ.get('DISCORD_BOT_SECRET')))
