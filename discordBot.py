@@ -2,6 +2,12 @@
 import os
 import discord
 import random
+import os
+import discord
+from discord.ext import commands
+from discord.ext.commands import has_role
+from discord import Member
+from discord.utils import get
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix='>', description="Wing Bot")
