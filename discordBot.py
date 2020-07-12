@@ -1,4 +1,5 @@
 # import discord
+import os
 import discord
 import random
 from discord.ext import commands
@@ -7,8 +8,8 @@ bot = commands.Bot(command_prefix='>', description="Wing Bot")
 
 foodList = ['八方雲集','麥當勞','肯德基','貓貓蟲']
 
-TOKEN = 'XXXXXXXXXX'
-
+TOKEN = os.environ.get("DISCORD_BOT_SECRET")
+aaa = 'NzMwNDUwOTgzMTIxMDU5ODU4.XwnEfw.Y4vEv8cYhY9rSZsyiYrQhlofh6Q'
 client = discord.Client()
 discord.ClientUser
 lobbyChannelId = 557519719947698197
@@ -63,4 +64,4 @@ async def on_ready():
     print(client.user.id)
     print('------')
 
-client.run('NzMwNDUwOTgzMTIxMDU5ODU4.XwnEfw.Y4vEv8cYhY9rSZsyiYrQhlofh6Q')
+client.run(TOKEN)
