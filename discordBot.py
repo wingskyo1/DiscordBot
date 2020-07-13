@@ -5,6 +5,7 @@ import random
 client = discord.Client()
 foodList = []
 lobbyChannelId = 557519719947698197
+lobbyChannelIdNobiri = 730297399548837968
 
 @client.event
 async def on_ready():
@@ -33,9 +34,9 @@ async def on_message(message):
 
 @client.event
 async def on_voice_state_update(member, before, after):
-    lobbyChannel = client.get_channel(lobbyChannelId)
+    lobbyChannel = client.get_channel(lobbyChannelIdNobiri)
     msg = ""
-    userName = member.nick
+    userName = member.nick if member.nick !=None else member.name
     beforeMute = before.self_mute
     beforeChannel = before.channel
     afterMute = after.self_mute
@@ -49,9 +50,10 @@ async def on_voice_state_update(member, before, after):
         else :
             msg += ' 加入了語音頻道'  + after.channel.name 
 
-    await lobbyChannel.send(str(userName) + msg)
+    await lobbyChannel.send( userName + msg)
 
 
 TOKEN = os.environ.get("DISCORD_BOT_SECRET")
-client.run(TOKEN)
+# client.run(TOKEN)
+client.run('NzMwNDUwOTgzMTIxMDU5ODU4.XwqZow.0wBCn9wuMxKgvE2_CdWig_R6do8')
 
